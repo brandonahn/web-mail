@@ -1,29 +1,56 @@
+Postfix
+=======
 
-1. apt-get ¸í·É¾î¸¦ ÀÌ¿ëÇÏ¿© postfix¸¦ ¼³Ä¡ÇÑ´Ù.
+ì•„ì§ë„ ì´ë©”ì¼ì€ ì—¬ì „íˆ ì¤‘ìš”í•œ ì˜ì‚¬ ì†Œí†µ ìˆ˜ë‹¨ ë° í˜‘ì—… ë„êµ¬ë¡œ ì‚¬ìš©ë˜ê³  ìˆì§€ë§Œ ì´ ì™¸ì—ë„ ì´ë©”ì¼ ì„œë²„ì˜ ìš©ë„ëŠ”
+ì´ìŠˆ ê´€ë¦¬, ì§€ì†ì ì¸ í†µí•©, ë²„ì „ ê´€ë¦¬ ì‹œìŠ¤í…œë“±ì—ì„œ ì´ë²¤íŠ¸ ë°œìƒì´ë‚˜ í†µì§€ ì‚¬í•­ì„ ì‚¬ìš©ìì—ê²Œ ì•Œë¦¬ëŠ” ë„êµ¬ë¡œë„ ì‚¬ìš©í•˜ê³  ìˆë‹¤.
+
+ postfix ì†Œê°œ
+sendmail ê°™ì€ SMTP(Simple Mail Transfer Protocl) ë¥¼ êµ¬í˜„í•œ ì†Œí”„íŠ¸ì›¨ì–´ë¥¼ MTA(Mail Transfer Agent) ë¼ê³  ë¶€ë¥´ë©°
+MSì˜ ì•„ì›ƒë£©ì´ë‚˜ ëª¨ì§ˆë¼ì˜ ì¬ë”ë²„ë“œ, ì½˜ì†”ì—ì„œ êµ¬ë™ë˜ëŠ” mutt ë“±ì˜ ì‚¬ìš©ì í”„ë¡œê·¸ë¨ì€ MUA(Mail User Agent) ë¼ê³  ë¶„ë¥˜í•œë‹¤. 
+
+sendmail ì€ ì „í†µì ìœ¼ë¡œ ë§ì´ ì‚¬ìš©ë˜ë˜ MTA ì˜€ê³  RHEL 5 ê¹Œì§€ëŠ” ê¸°ë³¸ ë©”ì¼ ì„œë²„ ë°ëª¬ì´ì—ˆìœ¼ë‚˜ RHEL 6 ë¶€í„°ëŠ” postfix ë¡œ êµì²´ë˜ì—ˆë‹¤.
+ë¬¼ë¡  ì›í•˜ëŠ” ì‚¬ìš©ìëŠ” sendmail ì„ MTA ë¡œ ì‚¬ìš©í•˜ëŠ” ê²ƒë„ ê°€ëŠ¥í•˜ë‹¤.
+
+ 
+
+íŠ¹ì§•
+
+postfix ëŠ” IBMì˜ ë³´ì•ˆ ì „ë¬¸ê°€ê°€ ë§Œë“  ì œí’ˆìœ¼ë¡œ sendmail ê³¼ ë¹„êµí•´ì„œ ë‹¤ìŒê³¼ ê°™ì€ ì¥ì ì´ ìˆë‹¤.
+
+ì†ì‰¬ìš´ ì„¤ì •
+sendmail ì€ m4 ë¼ëŠ” ë§¤í¬ë¡œ ì–¸ì–´ë¥¼ ì‚¬ìš©í•˜ì—¬ ì„¤ì • íŒŒì¼ì„ ìƒì„±í•˜ëŠ”ë° ì˜ˆì „ë¶€í„° sendmail ì˜ ì„¤ì •ì€ ì–´ë µê³  ê°€ë…ì„±ì´ ë–¨ì–´ì§€ê¸°ë¡œ ì•…ëª…ì´ ë†’ì•˜ë‹¤. postfix ëŠ” ì‚¬ìš©ì ì¹œí™”ì ì´ê³  ì†ì‰¬ìš´ ì„¤ì • ë°©ì‹ì„ ì œê³µí•œë‹¤. 
+ê²¬ê³ í•œ ë³´ì•ˆ
+sendmail ì€ ë³´ì•ˆì´ í° ë¬¸ì œê°€ ë˜ì§€ ì•Šë˜ ì‹œì ˆì— ê°œë°œë˜ì–´ì„œ ë§ì€ ë³´ì•ˆ ì·¨ì•½ì ì„ ê°–ê³  ìˆë‹¤. postfix ëŠ” ëŒ€ì‹  RHEL ë²„ì „ 6 ë¶€í„° ê¸°ë³¸ MTA(Message Transfer Agent) ë¡œ ì±„íƒëœ ë©”ì¼ ì „ì†¡ ì„œë²„ì´ë‹¤.
+ë¹ ë¥¸ ì²˜ë¦¬ ì†ë„
+ë¹ ë¥¸ ë©”ì¼ ì†¡ìˆ˜ì‹ ì„ ì—¼ë‘ì— ë‘ê³  ì„¤ê³„/ê°œë°œë˜ì–´ sendmail ì— ë¹„í•´ ë¹ ë¥¸ ì†ë„ë¥¼ ìë‘í•œë‹¤.
+
+
+
+1. apt-get ëª…ë ¹ì–´ë¥¼ ì´ìš©í•˜ì—¬ postfixë¥¼ ì„¤ì¹˜í•œë‹¤.
 
   $ apt-get install postfix
 
 
-2. postfix¸¦ ¼³Á¤ÇÑ´Ù.
+2. postfixë¥¼ ì„¤ì •í•œë‹¤.
 
   $ dpkg-reconfigure postfix
 
-  # ÀÎÅÍ³İ »çÀÌÆ®
-  # ¼­¹ö´Â µµ¸ŞÀÎÀ¸·Î
+  # ì¸í„°ë„· ì‚¬ì´íŠ¸
+  # ì„œë²„ëŠ” ë„ë©”ì¸ìœ¼ë¡œ
   # Postfix Configuration : server.com mail.server.com localhost.server.com localhost
-  # µ¿±â ¾÷µ¥ÀÌÆ® ¼³Á¤Àº ¿øÇÏ´Â °ªÀ¸·Î
-  # ³ª¸ÓÁö ±×³É ¿£ÅÍ ¿¬Å¸
+  # ë™ê¸° ì—…ë°ì´íŠ¸ ì„¤ì •ì€ ì›í•˜ëŠ” ê°’ìœ¼ë¡œ
+  # ë‚˜ë¨¸ì§€ ê·¸ëƒ¥ ì—”í„° ì—°íƒ€
 
 
-3. postfix ¼¼ºÎ¼³Á¤
+3. postfix ì„¸ë¶€ì„¤ì •
 
-  # ¸ŞÀÏ Æú´õ ¼³Á¤
+  # ë©”ì¼ í´ë” ì„¤ì •
   $ postconf -e 'home_mailbox = Maildir/'
  
-  # procmail ¹Ì»ç¿ë ¼³Á¤
+  # procmail ë¯¸ì‚¬ìš© ì„¤ì •
   $ postconf -e "mailbox_command = "
  
-  # SASLÀ» ÀÌ¿ëÇØ SMTP ÀÎÁõÀ» »ç¿ëÇÏ±â À§ÇÏ¿© ¼³Á¤ÇÒ °Íµé
+  # SASLì„ ì´ìš©í•´ SMTP ì¸ì¦ì„ ì‚¬ìš©í•˜ê¸° ìœ„í•˜ì—¬ ì„¤ì •í•  ê²ƒë“¤
   $ postconf -e 'smtpd_sasl_local_domain ='
  
   $ postconf -e 'smtpd_sasl_auth_enable = yes'
@@ -59,7 +86,7 @@
   $ mv cacert.pem /etc/ssl/certs/
 
 
-4. ÀÎÁõ¼­ »ı¼ºÀÌ µÇ¾úÀ¸¸é °ü·Ã TLSÀÎÅ©¸³¼Ç »ç¿ëÀ» À§ÇØ ¼³Á¤À» ÇØÁÖ¾î¾ß ÇÑ´Ù.
+4. ì¸ì¦ì„œ ìƒì„±ì´ ë˜ì—ˆìœ¼ë©´ ê´€ë ¨ TLSì¸í¬ë¦½ì…˜ ì‚¬ìš©ì„ ìœ„í•´ ì„¤ì •ì„ í•´ì£¼ì–´ì•¼ í•œë‹¤.
   $ postconf -e 'smtpd_tls_auth_only = no'
  
   $ postconf -e 'smtp_use_tls = yes'
@@ -68,7 +95,7 @@
  
   $ postconf -e 'smtp_tls_note_starttls_offer = yes'
  
-  #ÇÏ´Ü °æ·Î´Â ÀÚ½Å¿¡°Ô ¸ÂÃç ¼öÁ¤
+  #í•˜ë‹¨ ê²½ë¡œëŠ” ìì‹ ì—ê²Œ ë§ì¶° ìˆ˜ì •
   $ postconf -e 'smtpd_tls_key_file = /etc/ssl/private/smtpd.key'
  
   $ postconf -e 'smtpd_tls_cert_file = /etc/ssl/certs/smtpd.crt'
@@ -83,11 +110,11 @@
  
   $ postconf -e 'tls_random_source = dev:/dev/urandom'
  
-  #ÀÌ ¾Æ·¡ ÁÖ¼Ò´Â ¾Ë¾Æ¼­ ¼öÁ¤
+  #ì´ ì•„ë˜ ì£¼ì†ŒëŠ” ì•Œì•„ì„œ ìˆ˜ì •
   $ postconf -e 'myhostname = server1.example.com'
 
 
-5. SMTP ÀÎÁõ¿¡ °üÇÑ ¼³Á¤
+5. SMTP ì¸ì¦ì— ê´€í•œ ì„¤ì •
 
   $ vim /etc/postfix/sasl/smtpd.conf
  
@@ -96,43 +123,43 @@
   mech_list: plain login
 
 
-6. postfix µ¥¸ó Àç½ÃÀÛ
+6. postfix ë°ëª¬ ì¬ì‹œì‘
 
   $ service postfix reload
 
 
-7. ´ÙÀ½ ÀÛ¾÷À¸·Î sasl2¸¦ ¼³Ä¡ÇÑ´Ù.
+7. ë‹¤ìŒ ì‘ì—…ìœ¼ë¡œ sasl2ë¥¼ ì„¤ì¹˜í•œë‹¤.
 
   $ apt-get install libsasl2-2 libsasl2-modules sasl2-bin
 
 
-8. saslauthd¸¦ ¼öÁ¤ÇÑ´Ù.
+8. saslauthdë¥¼ ìˆ˜ì •í•œë‹¤.
 
   $ vim /etc/default/saslauthd
  
-  # START¸¦ yes·Î ¼öÁ¤ÇÏ°í PWDIR, PARAMS, PIDFILE¸¦ Ãß°¡
+  # STARTë¥¼ yesë¡œ ìˆ˜ì •í•˜ê³  PWDIR, PARAMS, PIDFILEë¥¼ ì¶”ê°€
   START=yes
   PWDIR="/var/spool/postfix/var/run/saslauthd"
   PARAMS="-m ${PWDIR}"
   PIDFILE="${PWDIR}/saslauthd.pid"
  
-  # OPTION ¼öÁ¤
+  # OPTION ìˆ˜ì •
   OPTIONS="-c -m /var/spool/postfix/var/run/saslauthd"
 
 
-9. saslauthd ¾÷µ¥ÀÌÆ® ±×¸®°í ½ÇÇà
+9. saslauthd ì—…ë°ì´íŠ¸ ê·¸ë¦¬ê³  ì‹¤í–‰
 
   $ dpkg-statoverride --force --update --add root sasl 755 /var/spool/postfix/var/run/saslauthd
  
   $ service saslauthd start
 
 
-10. IMAP°ú POP3¸¦ ¼³Ä¡ÇÑ´Ù.
+10. IMAPê³¼ POP3ë¥¼ ì„¤ì¹˜í•œë‹¤.
 
   $ apt-get install courier-pop courier-imap
 
 
-11. Mail µğ·ºÅä¸® »ı¼º
+11. Mail ë””ë ‰í† ë¦¬ ìƒì„±
   $ mkdir /etc/skel
   $ mkdir /etc/skel/Maildir
   $ maildirmake /etc/skel/Maildir/.Drafts
@@ -141,7 +168,7 @@
   $ maildirmake /etc/skel/Maildir/.Templates
 
 
-12. »ç¿ëÀÚ¿¡ ´ëÇØ ¸ŞÀÏ Æú´õ »ı¼º(user´Â ¸ŞÀÏ »ç¿ëÀÚÀÌ¸ç ¿ìºĞÅõ °èÁ¤ÀÌ´Ù)
+12. ì‚¬ìš©ìì— ëŒ€í•´ ë©”ì¼ í´ë” ìƒì„±(userëŠ” ë©”ì¼ ì‚¬ìš©ìì´ë©° ìš°ë¶„íˆ¬ ê³„ì •ì´ë‹¤)
 
   $ cp -r /etc/skel/Maildir /home/myuser/
  
@@ -150,7 +177,7 @@
   $ chmod -R 700 /home/myuser/Maildir
 
 
-13. ¸ŞÀÏ Àü¼Û Å×½ºÆ®
+13. ë©”ì¼ ì „ì†¡ í…ŒìŠ¤íŠ¸
 
   $ telnet localhost 25
  
@@ -159,7 +186,7 @@
     Escape character is '^]'.
     220 mail.comingmedia.com ESMTP Postfix (Ubuntu)
  
-    ehlo yourdomain.com					# Å¸ÀÌÇÎ
+    ehlo yourdomain.com					# íƒ€ì´í•‘
  
     250-mail.yourdomain.com
     250-PIPELINING
@@ -173,31 +200,31 @@
     250-8BITMIME
     250 DSN
  
-    mail from: root@yourdomain.com				# Å¸ÀÌÇÎ
+    mail from: root@yourdomain.com				# íƒ€ì´í•‘
  
     250 2.1.0 Ok
  
-    rcpt to: jhanglim@yourdomain.com			# Å¸ÀÌÇÎ
+    rcpt to: jhanglim@yourdomain.com			# íƒ€ì´í•‘
  
     250 2.1.5 Ok
  
-    data							# Å¸ÀÌÇÎ
+    data							# íƒ€ì´í•‘
  
     354 End data with .
  
-    Subject: My first mail					# Å¸ÀÌÇÎ
+    Subject: My first mail					# íƒ€ì´í•‘
  
-    Hi,							# Å¸ÀÌÇÎ
-    .   (and Enter In a new Line)				# Å¸ÀÌÇÎ
+    Hi,							# íƒ€ì´í•‘
+    .   (and Enter In a new Line)				# íƒ€ì´í•‘
  
     250 2.0.0 Ok: queued as C515B863FC
  
-    quit							# Å¸ÀÌÇÎ
+    quit							# íƒ€ì´í•‘
     221 2.0.0 Bye
     Connection closed by foreign host.
 
 
-14. ¸ŞÀÏÀ» ·ÎÄÃ À¯Àú¿¡°Ô ¹ß¼Û ÇßÀ» °æ¿ì È®ÀÎÇØº»´Ù.
+14. ë©”ì¼ì„ ë¡œì»¬ ìœ ì €ì—ê²Œ ë°œì†¡ í–ˆì„ ê²½ìš° í™•ì¸í•´ë³¸ë‹¤.
   $ cd /home/user/Maildir/new
   $ ls
 
