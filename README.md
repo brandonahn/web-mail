@@ -31,18 +31,18 @@ postfix 는 IBM의 보안 전문가가 만든 제품으로 sendmail 과 비교�
 Postfix 설치
 ------------
 
-## 1. apt-get 명령어를 이용하여 postfix를 설치한다.
+#### 1. apt-get 명령어를 이용하여 postfix를 설치한다.
 
   $ apt-get install postfix
 
 
-## 2. postfix를 설정한다.
+#### 2. postfix를 설정한다.
 
   $ dpkg-reconfigure postfix
 
   
 
-## 3. postfix 세부설정
+#### 3. postfix 세부설정
 
   #메일 폴더 설정
   $ postconf -e 'home_mailbox = Maildir/'
@@ -86,7 +86,7 @@ Postfix 설치
   $ mv cacert.pem /etc/ssl/certs/
 
 
-4. 인증서 생성이 되었으면 관련 TLS인크립션 사용을 위해 설정을 해주어야 한다.
+#### 4. 인증서 생성이 되었으면 관련 TLS인크립션 사용을 위해 설정을 해주어야 한다.
   $ postconf -e 'smtpd_tls_auth_only = no'
  
   $ postconf -e 'smtp_use_tls = yes'
@@ -114,7 +114,7 @@ Postfix 설치
   $ postconf -e 'myhostname = server1.example.com'
 
 
-5. SMTP 인증에 관한 설정
+#### 5. SMTP 인증에 관한 설정
 
   $ vim /etc/postfix/sasl/smtpd.conf
  
@@ -123,17 +123,17 @@ Postfix 설치
   mech_list: plain login
 
 
-6. postfix 데몬 재시작
+#### 6. postfix 데몬 재시작
 
   $ service postfix reload
 
 
-7. 다음 작업으로 sasl2를 설치한다.
+#### 7. 다음 작업으로 sasl2를 설치한다.
 
   $ apt-get install libsasl2-2 libsasl2-modules sasl2-bin
 
 
-8. saslauthd를 수정한다.
+#### 8. saslauthd를 수정한다.
 
   $ vim /etc/default/saslauthd
  
@@ -147,19 +147,19 @@ Postfix 설치
   OPTIONS="-c -m /var/spool/postfix/var/run/saslauthd"
 
 
-9. saslauthd 업데이트 그리고 실행
+#### 9. saslauthd 업데이트 그리고 실행
 
   $ dpkg-statoverride --force --update --add root sasl 755 /var/spool/postfix/var/run/saslauthd
  
   $ service saslauthd start
 
 
-10. IMAP과 POP3를 설치한다.
+#### 10. IMAP과 POP3를 설치한다.
 
   $ apt-get install courier-pop courier-imap
 
 
-11. Mail 디렉토리 생성
+#### 11. Mail 디렉토리 생성
   $ mkdir /etc/skel
   $ mkdir /etc/skel/Maildir
   $ maildirmake /etc/skel/Maildir/.Drafts
@@ -168,7 +168,7 @@ Postfix 설치
   $ maildirmake /etc/skel/Maildir/.Templates
 
 
-12. 사용자에 대해 메일 폴더 생성(user는 메일 사용자이며 우분투 계정이다)
+#### 12. 사용자에 대해 메일 폴더 생성(user는 메일 사용자이며 우분투 계정이다)
 
   $ cp -r /etc/skel/Maildir /home/myuser/
  
@@ -177,7 +177,7 @@ Postfix 설치
   $ chmod -R 700 /home/myuser/Maildir
 
 
-13. 메일 전송 테스트
+#### 13. 메일 전송 테스트
 
   $ telnet localhost 25
  
@@ -224,7 +224,7 @@ Postfix 설치
     Connection closed by foreign host.
 
 
-14. 메일을 로컬 유저에게 발송 했을 경우 확인해본다.
+#### 14. 메일을 로컬 유저에게 발송 했을 경우 확인해본다.
   $ cd /home/user/Maildir/new
   $ ls
 
