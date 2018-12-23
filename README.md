@@ -28,6 +28,8 @@ postfix 는 IBM의 보안 전문가가 만든 제품으로 sendmail 과 비교�
     빠른 메일 송수신을 염두에 두고 설계/개발되어 sendmail 에 비해 빠른 속도를 자랑한다.
 
 
+Postfix 설치
+------------
 
 1. apt-get 명령어를 이용하여 postfix를 설치한다.
 
@@ -38,12 +40,7 @@ postfix 는 IBM의 보안 전문가가 만든 제품으로 sendmail 과 비교�
 
   $ dpkg-reconfigure postfix
 
-  # 인터넷 사이트
-  # 서버는 도메인으로
-  # Postfix Configuration : server.com mail.server.com localhost.server.com localhost
-  # 동기 업데이트 설정은 원하는 값으로
-  # 나머지 그냥 엔터 연타
-
+  
 
 3. postfix 세부설정
 
