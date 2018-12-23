@@ -14,6 +14,7 @@ sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기
  
 
 특징
+----
 
 postfix 는 IBM의 보안 전문가가 만든 제품으로 sendmail 과 비교해서 다음과 같은 장점이 있다.
 
