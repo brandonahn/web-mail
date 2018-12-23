@@ -10,8 +10,8 @@ Postfix
 >> Sendmail 같은 SMTP(Simple Mail Transfer Protocl) 를 구현한 소프트웨어를 MTA(Mail Transfer Agent) 라고 부르며
 >> MS의 아웃룩이나 모질라의 썬더버드, 콘솔에서 구동되는 mutt 등의 사용자 프로그램은 MUA(Mail User Agent) 라고 분류한다. 
 
->> sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기본 메일 서버 데몬이었으나 RHEL 6 부터는 postfix 로 교체되었다.
->> 물론 원하는 사용자는 sendmail 을 MTA 로 사용하는 것도 가능하다.
+>> Sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기본 메일 서버 데몬이었으나 RHEL 6 부터는 Postfix 로 교체되었다.
+>> 물론 원하는 사용자는 Sendmail 을 MTA 로 사용하는 것도 가능하다.
 
  
 
