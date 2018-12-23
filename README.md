@@ -1,31 +1,31 @@
 Postfix
 =======
 
-> 아직도 이메일은 여전히 중요한 의사 소통 수단 및 협업 도구로 사용되고 있지만 이 외에도 이메일 서버의 용도는
-> 이슈 관리, 지속적인 통합, 버전 관리 시스템등에서 이벤트 발생이나 통지 사항을 사용자에게 알리는 도구로도 사용하고 있다.
+>> 아직도 이메일은 여전히 중요한 의사 소통 수단 및 협업 도구로 사용되고 있지만 이 외에도 이메일 서버의 용도는
+>> 이슈 관리, 지속적인 통합, 버전 관리 시스템등에서 이벤트 발생이나 통지 사항을 사용자에게 알리는 도구로도 사용하고 있다.
 
  I. Postfix 소개
  ----------------
 
-> sendmail 같은 SMTP(Simple Mail Transfer Protocl) 를 구현한 소프트웨어를 MTA(Mail Transfer Agent) 라고 부르며
-> MS의 아웃룩이나 모질라의 썬더버드, 콘솔에서 구동되는 mutt 등의 사용자 프로그램은 MUA(Mail User Agent) 라고 분류한다. 
+>> sendmail 같은 SMTP(Simple Mail Transfer Protocl) 를 구현한 소프트웨어를 MTA(Mail Transfer Agent) 라고 부르며
+>> MS의 아웃룩이나 모질라의 썬더버드, 콘솔에서 구동되는 mutt 등의 사용자 프로그램은 MUA(Mail User Agent) 라고 분류한다. 
 
-> sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기본 메일 서버 데몬이었으나 RHEL 6 부터는 postfix 로 교체되었다.
-> 물론 원하는 사용자는 sendmail 을 MTA 로 사용하는 것도 가능하다.
+>> sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기본 메일 서버 데몬이었으나 RHEL 6 부터는 postfix 로 교체되었다.
+>> 물론 원하는 사용자는 sendmail 을 MTA 로 사용하는 것도 가능하다.
 
  
 
 II. 특징
 ---------
 
-> postfix 는 IBM의 보안 전문가가 만든 제품으로 sendmail 과 비교해서 다음과 같은 장점이 있다.
+>> postfix 는 IBM의 보안 전문가가 만든 제품으로 sendmail 과 비교해서 다음과 같은 장점이 있다.
 
 ###  1. 손쉬운 설정
- sendmail 은 m4 라는 매크로 언어를 사용하여 설정 파일을 생성하는데 예전부터 sendmail 의 설정은 어렵고 가독성이 떨어지기로 악명이 높았다. postfix 는 사용자 친화적이고 손쉬운 설정 방식을 제공한다. 
+>> sendmail 은 m4 라는 매크로 언어를 사용하여 설정 파일을 생성하는데 예전부터 sendmail 의 설정은 어렵고 가독성이 떨어지기로 악명이 높았다. postfix 는 사용자 친화적이고 손쉬운 설정 방식을 제공한다. 
 ###  2. 견고한 보안
- sendmail 은 보안이 큰 문제가 되지 않던 시절에 개발되어서 많은 보안 취약점을 갖고 있다. postfix 는 대신 RHEL 버전 6 부터 기본 MTA(Message Transfer Agent) 로 채택된 메일 전송 서버이다.
+>> sendmail 은 보안이 큰 문제가 되지 않던 시절에 개발되어서 많은 보안 취약점을 갖고 있다. postfix 는 대신 RHEL 버전 6 부터 기본 MTA(Message Transfer Agent) 로 채택된 메일 전송 서버이다.
 ###  3. 빠른 처리 속도
- 빠른 메일 송수신을 염두에 두고 설계/개발되어 sendmail 에 비해 빠른 속도를 자랑한다.
+>> 빠른 메일 송수신을 염두에 두고 설계/개발되어 sendmail 에 비해 빠른 속도를 자랑한다.
 
 
 III. Postfix 설치
@@ -33,12 +33,12 @@ III. Postfix 설치
 
 #### 1. apt-get 명령어를 이용하여 postfix를 설치한다.
 
-  $ apt-get install postfix
+>>  $ apt-get install postfix
 
 
 #### 2. postfix를 설정한다.
 
-  $ dpkg-reconfigure postfix
+>>  $ dpkg-reconfigure postfix
 
   
 
