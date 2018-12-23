@@ -1,17 +1,17 @@
 Postfix
 =======
 
-아직도 이메일은 여전히 중요한 의사 소통 수단 및 협업 도구로 사용되고 있지만 이 외에도 이메일 서버의 용도는
-이슈 관리, 지속적인 통합, 버전 관리 시스템등에서 이벤트 발생이나 통지 사항을 사용자에게 알리는 도구로도 사용하고 있다.
+> 아직도 이메일은 여전히 중요한 의사 소통 수단 및 협업 도구로 사용되고 있지만 이 외에도 이메일 서버의 용도는
+> 이슈 관리, 지속적인 통합, 버전 관리 시스템등에서 이벤트 발생이나 통지 사항을 사용자에게 알리는 도구로도 사용하고 있다.
 
  I. Postfix 소개
  ----------------
 
-sendmail 같은 SMTP(Simple Mail Transfer Protocl) 를 구현한 소프트웨어를 MTA(Mail Transfer Agent) 라고 부르며
-MS의 아웃룩이나 모질라의 썬더버드, 콘솔에서 구동되는 mutt 등의 사용자 프로그램은 MUA(Mail User Agent) 라고 분류한다. 
+> sendmail 같은 SMTP(Simple Mail Transfer Protocl) 를 구현한 소프트웨어를 MTA(Mail Transfer Agent) 라고 부르며
+> MS의 아웃룩이나 모질라의 썬더버드, 콘솔에서 구동되는 mutt 등의 사용자 프로그램은 MUA(Mail User Agent) 라고 분류한다. 
 
-sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기본 메일 서버 데몬이었으나 RHEL 6 부터는 postfix 로 교체되었다.
-물론 원하는 사용자는 sendmail 을 MTA 로 사용하는 것도 가능하다.
+> sendmail 은 전통적으로 많이 사용되던 MTA 였고 RHEL 5 까지는 기본 메일 서버 데몬이었으나 RHEL 6 부터는 postfix 로 교체되었다.
+> 물론 원하는 사용자는 sendmail 을 MTA 로 사용하는 것도 가능하다.
 
  
 
