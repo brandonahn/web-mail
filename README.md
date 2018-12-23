@@ -4,7 +4,7 @@ Postfix
 아직도 이메일은 여전히 중요한 의사 소통 수단 및 협업 도구로 사용되고 있지만 이 외에도 이메일 서버의 용도는
 이슈 관리, 지속적인 통합, 버전 관리 시스템등에서 이벤트 발생이나 통지 사항을 사용자에게 알리는 도구로도 사용하고 있다.
 
- postfix 소개
+ Postfix 소개
  ------------
 
 sendmail 같은 SMTP(Simple Mail Transfer Protocl) 를 구현한 소프트웨어를 MTA(Mail Transfer Agent) 라고 부르며
