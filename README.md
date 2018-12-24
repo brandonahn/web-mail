@@ -325,7 +325,8 @@ IV. Roundcube (Web mail client 소프트웨어) 설치하기
 #### 8. 모든 설정이 끝났으면 인스톨을 사용할 수 없도록 false 처리 합니다.
 >> vi /etc/roundcubemail/config.inc.php
 >>> $config['enable_installer'] = false; 
-
+#### 9. roundcube 웹메일에 로그인 한 후 메일을 이용한다.
+![구성1](https://github.com/brandonahn/web-mail/webmail-001.png)
 
 
 
