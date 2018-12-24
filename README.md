@@ -232,6 +232,7 @@ III. Postfix 설치
 
 
 
+
 IV. Roundcube (Web mail client 소프트웨어) 설치하기
 ---------------------------------------------------
 
@@ -240,6 +241,62 @@ IV. Roundcube (Web mail client 소프트웨어) 설치하기
 >>  $ apt-get install roundcubemail
 
 
+#### 2. roundcube 설정 파일 준비
+
+>> vi /etc/nginx/conf.d/roundcube.conf
+
+server {
+        listen      80;
+        server_name webmail.도메인주소;
+        root        /usr/share/roundcubemail;
+
+        # Logs
+        access_log  /var/log/roundcubemail/access.log main;
+        error_log   /var/log/roundcubemail/error.log;
+
+        # Default location settings
+        location / {
+                index   index.php;
+                try_files $uri $uri/ /index.php?$args;
+        }
+
+        # Redirect server error pages to the static page /50x.html
+        error_page 500 502 503 504 /50x.html;
+                location = /50x.html {
+                root /usr/share/nginx/html;
+        }
+        #error_page  404              /404.html;
+
+        # Pass the PHP scripts to FastCGI server (locally with unix: param to avoid network overhead)
+        location ~ \.php$ {
+                # Prevent Zero-day exploit
+                try_files $uri =404;
+
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+
+                #fastcgi_pass    unix:/var/run/php-fpm/www.sock;
+                fastcgi_pass    127.0.0.1:9000;
+                fastcgi_index   index.php;
+                fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_keep_conn on;
+                fastcgi_split_path_info         ^(.+\.php)(.*)$;
+                fastcgi_param PATH_INFO         $fastcgi_path_info;
+                fastcgi_param PATH_TRANSLATED   $document_root$fastcgi_path_info;
+                include         fastcgi_params;
+        }
+
+        # Deny access to .htaccess files, if Apache's document root
+        location ~ /\.ht {
+            deny  all;
+        }
+
+        # Exclude favicon from the logs to avoid bloating when it's not available
+        location /favicon.ico {
+                log_not_found   off;
+                access_log      off;
+        }
+}
 
 
 
