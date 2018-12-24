@@ -326,7 +326,7 @@ IV. Roundcube (Web mail client 소프트웨어) 설치하기
 >> vi /etc/roundcubemail/config.inc.php
 >>> $config['enable_installer'] = false; 
 #### 9. roundcube 웹메일에 로그인 한 후 메일을 이용한다.
-![구성1](https://github.com/brandonahn/web-mail/webmail-0001.jpg)
+![구성1](https://github.com/brandonahn/web-mail/blob/master/webmail-0001.jpg)
 
 
 
