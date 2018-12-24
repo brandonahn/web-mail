@@ -1,4 +1,4 @@
-Postfix
+메일 서버
 =======
 
 >> 아직도 이메일은 여전히 중요한 의사 소통 수단 및 협업 도구로 사용되고 있지만 이 외에도 이메일 서버의 용도는
@@ -15,8 +15,8 @@ Postfix
 
  
 
-II. 특징
----------
+II. Postfix 특징
+-----------------
 
 >> Postfix 는 IBM의 보안 전문가가 만든 제품으로 Sendmail 과 비교해서 다음과 같은 장점이 있다.
 
@@ -219,7 +219,9 @@ III. Postfix 설치
  
     250 2.0.0 Ok: queued as C515B863FC
  
-    quit							# 타이핑
+    quit							# 타
+    
+    이핑
     221 2.0.0 Bye
     Connection closed by foreign host.
 
@@ -227,6 +229,16 @@ III. Postfix 설치
 #### 14. 메일을 로컬 유저에게 발송 했을 경우 확인해본다.
 >>  $ cd /home/user/Maildir/new
 >>  $ ls
+
+
+
+IV. Roundcube (Web mail client 소프트웨어) 설치하기
+---------------------------------------------------
+
+#### 1. apt-get 명령어를 이용하여 roundcube를 설치한다.
+
+>>  $ apt-get install roundcubemail
+
 
 
 
